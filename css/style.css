@@ -4874,6 +4874,7 @@ textarea:focus-visible {
     border-radius: 1rem;
     overflow: hidden;
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    padding: 40px 0px;
 }
 
 .pricing-table th,
@@ -5677,6 +5678,7 @@ textarea:focus-visible {
     font-size: 1.25rem;
     font-weight: 700;
     color: #111827;
+    margin-top: 0;
     margin-bottom: 1rem;
 }
 
@@ -6071,4 +6073,217 @@ textarea:focus-visible {
 .barrier-item.in-view {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Блок с описанием тарифных планов */
+.pricing-features {
+    padding: 4rem 1rem;
+    background: linear-gradient(to bottom right, #f9fafb, white);
+}
+
+.pricing-features__container {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.pricing-features__header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.pricing-features__title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1rem;
+}
+
+.pricing-features__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.pricing-plan {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-plan:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border-color: #ffc721;
+}
+
+.pricing-plan.featured {
+    border-color: #ffc721;
+    background: linear-gradient(135deg, #fff7ed, #fffbeb);
+}
+
+.plan-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #ffc721, #ffb700);
+    color: #111827;
+    padding: 0.5rem 1.5rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.plan-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.plan-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.plan-audience {
+    font-size: 1rem;
+    color: #4b5563;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.plan-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffc721;
+    margin-bottom: 0.5rem;
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1 1 auto;
+}
+
+.plan-feature {
+    padding: 1rem 0;
+    border-bottom: 1px solid #f3f4f6;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.plan-feature:last-child {
+    border-bottom: none;
+}
+
+.feature-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.25rem;
+}
+
+.feature-description {
+    color: #4b5563;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+.feature-language {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.language-version {
+    flex: 1;
+}
+
+.language-label {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+}
+
+.language-text {
+    font-size: 0.875rem;
+    color: #374151;
+    line-height: 1.4;
+}
+
+.plan-actions {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .pricing-features {
+        padding: 3rem 1rem;
+    }
+    
+    .pricing-features__title {
+        font-size: 1.75rem;
+    }
+    
+    .pricing-features__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-plan {
+        padding: 1.5rem;
+    }
+    
+    .plan-price {
+        font-size: 2rem;
+    }
+    
+    .feature-language {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing-features__title {
+        font-size: 1.5rem;
+    }
+    
+    .plan-name {
+        font-size: 1.25rem;
+    }
+    
+    .plan-price {
+        font-size: 1.75rem;
+    }
+}
+
+/* Анимация появления */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pricing-plan {
+    animation: fadeInUp 0.6s ease-out;
 }
