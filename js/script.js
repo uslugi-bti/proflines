@@ -238,4 +238,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
     animateProgressBars();
     initScrollAnimations();
+
+    if (document.querySelector(".principles-swiper")) {
+        const swiper = new Swiper('.principles-swiper', {
+            // Параметры
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            centeredSlides: true,
+            
+            // Адаптивность
+            breakpoints: {
+                640: {
+                    slidesPerView: 1.5,
+                    centeredSlides: true,
+                },
+                768: {
+                    slidesPerView: 2,
+                    centeredSlides: false,
+                },
+                1024: {
+                    slidesPerView: 2.5,
+                    centeredSlides: false,
+                },
+                1280: {
+                    slidesPerView: 3,
+                    centeredSlides: false,
+                }
+            },
+            
+            // Навигация
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            
+            // Пагинация
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            
+            // Эффекты
+            effect: 'slide',
+            speed: 600,
+        });
+    }
 });

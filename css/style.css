@@ -3562,8 +3562,8 @@ textarea:focus-visible {
 }
 
 .problem-icon {
-    background: rgba(239, 68, 68, 0.1);
-    color: #ef4444;
+    background: lightgrey;
+    color: rgba(0, 0, 0, 0.6);
 }
 
 .solution-icon {
@@ -3723,7 +3723,7 @@ textarea:focus-visible {
 
 .pain-point__icon {
     flex-shrink: 0;
-    color: #ef4444;
+    color: rgba(0, 0, 0, 0.6);
 }
 
 .pain-point__icon svg {
@@ -3812,6 +3812,7 @@ textarea:focus-visible {
     .pain-solution {
         flex-direction: column;
         text-align: center;
+        align-items: center;
     }
     
     .visual-arrow {
@@ -3939,12 +3940,14 @@ textarea:focus-visible {
     margin: 0;
 }
 
-/* Секция 2: Основные принципы методологии */
 .principles-section {
     margin-bottom: 5rem;
-    padding: 3rem;
+    padding: 3rem 1rem;
     background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
     border-radius: 1rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .principles-header {
@@ -3978,10 +3981,16 @@ textarea:focus-visible {
     margin: 0;
 }
 
-.principles-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+/* Swiper стили */
+.principles-swiper {
+    width: 100%;
+    padding: 20px 10px 40px;
+}
+
+.swiper-slide {
+    height: auto;
+    display: flex;
+    justify-content: center;
 }
 
 .principle-card {
@@ -3992,6 +4001,12 @@ textarea:focus-visible {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     border: 1px solid #e5e7eb;
     transition: all 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .principle-card:hover {
@@ -4058,7 +4073,7 @@ textarea:focus-visible {
 
 .process-step {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 2rem;
     padding: 2rem;
     background: white;
@@ -4078,7 +4093,7 @@ textarea:focus-visible {
 .step-number {
     font-size: 3rem;
     font-weight: 700;
-    color: rgba(255, 199, 33, 0.2);
+    color: rgba(255, 199, 33, 0.6);
     line-height: 1;
     flex-shrink: 0;
     min-width: 60px;
@@ -4087,7 +4102,7 @@ textarea:focus-visible {
 .step-content {
     flex: 1;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 1.5rem;
 }
 
@@ -4195,6 +4210,7 @@ textarea:focus-visible {
     font-size: 1.125rem;
     font-weight: 600;
     color: white;
+    margin-top: 0;
     margin-bottom: 0.25rem;
 }
 
@@ -4225,17 +4241,6 @@ textarea:focus-visible {
         order: 2;
     }
     
-    .principles-content {
-        grid-template-columns: 1fr 2fr;
-        gap: 4rem;
-        align-items: start;
-    }
-    
-    .principles-text {
-        text-align: left;
-        margin: 0;
-    }
-    
     .process-steps {
         grid-template-columns: 1fr;
     }
@@ -4250,9 +4255,6 @@ textarea:focus-visible {
 }
 
 @media (min-width: 1024px) {
-    .principles-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
     
     .process-step::before {
         content: '';
@@ -4556,7 +4558,8 @@ textarea:focus-visible {
 .transparency-feature {
     display: flex;
     align-items: flex-start;
-    gap: 1.5rem;
+    flex-direction: column;
+    gap: 0.7rem;
     padding: 1.5rem;
     background: #f9fafb;
     border-radius: 1rem;
@@ -4588,16 +4591,18 @@ textarea:focus-visible {
 }
 
 .feature-title {
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 700;
     color: #111827;
     margin-bottom: 0.5rem;
+    margin-top: 0;
 }
 
 .feature-text {
     color: #4b5563;
     line-height: 1.6;
     margin: 0;
+    font-size: 0.8rem;
 }
 
 /* Карточка гарантии */
@@ -4732,6 +4737,7 @@ textarea:focus-visible {
     .transparency-feature {
         flex-direction: column;
         text-align: center;
+        align-items: center;
         gap: 1rem;
     }
     
@@ -5020,7 +5026,7 @@ textarea:focus-visible {
 
 .guarantee-icon {
     flex-shrink: 0;
-    background: #ffc721;
+    background: #111827;
     padding: 1rem;
     border-radius: 0.75rem;
 }
@@ -5028,7 +5034,7 @@ textarea:focus-visible {
 .guarantee-icon svg {
     width: 1.5rem;
     height: 1.5rem;
-    color: #111827;
+    color: #ffc721;
 }
 
 .guarantee-text {
@@ -5040,6 +5046,7 @@ textarea:focus-visible {
     font-weight: 700;
     color: #111827;
     margin-bottom: 0.75rem;
+    text-align: center;
 }
 
 .guarantee-description {
@@ -5146,6 +5153,7 @@ textarea:focus-visible {
         flex-direction: column;
         text-align: center;
         gap: 1rem;
+        align-items: center;
     }
     
     .pricing-actions-grid {
