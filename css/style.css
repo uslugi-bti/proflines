@@ -4046,93 +4046,6 @@ textarea:focus-visible {
     font-size: 0.95rem;
 }
 
-/* Секция 3: Этапы проведения исследования */
-.process-section {
-    margin-bottom: 5rem;
-}
-
-.process-header {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.process-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #111827;
-    margin-bottom: 1rem;
-}
-
-.process-steps {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.process-step {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    padding: 2rem;
-    background: white;
-    border-radius: 1rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e5e7eb;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.process-step:hover {
-    transform: translateX(10px);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-    border-color: #ffc721;
-}
-
-.step-number {
-    font-size: 3rem;
-    font-weight: 700;
-    color: rgba(255, 199, 33, 0.6);
-    line-height: 1;
-    flex-shrink: 0;
-    min-width: 60px;
-}
-
-.step-content {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.step-icon {
-    width: 80px;
-    height: 80px;
-    border-radius: 1rem;
-    overflow: hidden;
-    flex-shrink: 0;
-}
-
-.step-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.step-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #111827;
-    margin-bottom: 0.75rem;
-}
-
-.step-description {
-    color: #4b5563;
-    line-height: 1.6;
-    margin: 0;
-}
-
 /* Секция 4: Как это работает */
 .how-it-works-section {
     background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
@@ -4255,20 +4168,6 @@ textarea:focus-visible {
 }
 
 @media (min-width: 1024px) {
-    
-    .process-step::before {
-        content: '';
-        position: absolute;
-        left: 2.5rem;
-        top: 100%;
-        height: 2rem;
-        width: 2px;
-        background: #e5e7eb;
-    }
-    
-    .process-step:last-child::before {
-        display: none;
-    }
     
     .how-it-works-steps {
         gap: 2rem;
@@ -6286,4 +6185,787 @@ textarea:focus-visible {
 
 .pricing-plan {
     animation: fadeInUp 0.6s ease-out;
+}
+
+/* Research Procedure Section */
+.research-procedure-section {
+    padding: 5rem 1rem;
+    background: white;
+}
+
+.research-procedure__header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.research-procedure__title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1rem;
+}
+
+.research-procedure__steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.research-step {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.research-step:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    border-color: #ffc721;
+}
+
+.research-step__number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(255, 199, 33, 0.6);
+    line-height: 1;
+    flex-shrink: 0;
+    min-width: 60px;
+}
+
+.research-step__content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.research-step__icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 1rem;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.research-step__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.research-step__text {
+    flex: 1;
+}
+
+.research-step__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.75rem;
+}
+
+.research-step__description {
+    color: #4b5563;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .research-procedure-section {
+        padding: 3rem 1rem;
+    }
+    
+    .research-procedure__title {
+        font-size: 1.75rem;
+    }
+    
+    .research-step {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    
+    .research-step__content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .research-step__number {
+        font-size: 2rem;
+        min-width: 40px;
+    }
+    
+    .research-step__icon {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .research-procedure__title {
+        font-size: 1.5rem;
+    }
+    
+    .research-step {
+        padding: 1rem;
+    }
+}
+
+/* Connector lines for desktop */
+@media (min-width: 1024px) {
+    .research-step::before {
+        content: '';
+        position: absolute;
+        left: 2.5rem;
+        top: 100%;
+        height: 2rem;
+        width: 2px;
+        background: #e5e7eb;
+    }
+    
+    .research-step:last-child::before {
+        display: none;
+    }
+}
+
+/* About Page Specific Styles */
+.about-page .hero {
+    padding: 8rem 1rem;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+/* About Intro Section */
+.about-intro {
+    padding: 5rem 1rem;
+    background: white;
+}
+
+.about-intro__container {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.about-intro__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-intro__title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 2rem;
+}
+
+.about-intro__description {
+    font-size: 1.125rem;
+    color: #374151;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.about-stat {
+    text-align: center;
+    padding: 2rem;
+    background: #f9fafb;
+    border-radius: 1rem;
+    border: 1px solid #e5e7eb;
+}
+
+.about-stat__number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffc721;
+    margin-bottom: 0.5rem;
+}
+
+.about-stat__label {
+    color: #374151;
+    font-weight: 500;
+}
+
+/* Mission & Vision */
+.mission-vision {
+    padding: 5rem 1rem;
+    background: linear-gradient(to bottom right, #f9fafb, white);
+}
+
+.mission-vision__container {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.mission-vision__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+.mission-card, .vision-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 3rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+.mission-card__icon, .vision-card__icon {
+    background: linear-gradient(135deg, #ffc721, #ffb700);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    display: inline-flex;
+    margin-bottom: 2rem;
+}
+
+.mission-card__icon svg, .vision-card__icon svg {
+    width: 2rem;
+    height: 2rem;
+    color: white;
+}
+
+.mission-card__title, .vision-card__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1rem;
+}
+
+.mission-card__description, .vision-card__description {
+    color: #374151;
+    line-height: 1.6;
+    font-size: 1.125rem;
+}
+
+/* What We Do Section */
+.what-we-do {
+    padding: 5rem 1rem;
+    background: white;
+}
+
+.what-we-do__container {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.what-we-do__header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.what-we-do__title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1rem;
+}
+
+.what-we-do__subtitle {
+    font-size: 1.25rem;
+    color: #374151;
+}
+
+.what-we-do__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-item {
+    background: #f9fafb;
+    border-radius: 1rem;
+    padding: 2rem;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    border-color: #ffc721;
+}
+
+.service-item__icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem auto;
+}
+
+.service-item__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.service-item__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1rem;
+}
+
+.service-item__description {
+    color: #374151;
+    line-height: 1.6;
+}
+
+/* How We Work Section */
+.how-we-work {
+    padding: 5rem 1rem;
+    background: linear-gradient(to bottom right, #f9fafb, white);
+}
+
+.how-we-work__container {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.how-we-work__header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.how-we-work__title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.how-we-work__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+}
+
+.ai-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 3rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+}
+
+.ai-card__icon {
+    background: linear-gradient(135deg, #ffc721, #ffb700);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    display: inline-flex;
+    margin-bottom: 2rem;
+}
+
+.ai-card__icon svg {
+    width: 2rem;
+    height: 2rem;
+    color: white;
+}
+
+.ai-card__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1rem;
+}
+
+.ai-card__description, .ai-card__benefit {
+    color: #374151;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.ai-card__benefit {
+    font-weight: 600;
+    color: #111827;
+}
+
+.process-features {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.process-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+}
+
+.process-feature__icon {
+    background: #ffc721;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    flex-shrink: 0;
+}
+
+.process-feature__icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: white;
+}
+
+.process-feature__content {
+    flex: 1;
+}
+
+.process-feature__title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.process-feature__description {
+    color: #374151;
+    line-height: 1.6;
+}
+
+/* Team Section */
+.team-section {
+    padding: 5rem 1rem;
+    background: white;
+}
+
+.team-section__container {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.team-section__header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.team-section__title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1rem;
+}
+
+.team-section__subtitle {
+    font-size: 1.25rem;
+    color: #374151;
+}
+
+.team-section__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.team-member-card {
+    background: #f9fafb;
+    border-radius: 1rem;
+    padding: 2rem;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.team-member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    border-color: #ffc721;
+}
+
+.team-member-card__photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1.5rem auto;
+    border: 4px solid #e5e7eb;
+}
+
+.team-member-card__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-member-card__name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.team-member-card__position {
+    color: #ffc721;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.team-member-card__description {
+    color: #374151;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Social Initiative */
+.social-initiative {
+    padding: 5rem 1rem;
+    background: linear-gradient(to bottom right, #111827, #1f2937);
+    color: white;
+}
+
+.social-initiative__container {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.social-initiative__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.social-initiative__title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #ffc721;
+}
+
+.social-initiative__description {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: #d1d5db;
+}
+
+.social-initiative__goal {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #ffc721;
+}
+
+.initiative-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.initiative-stat {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.initiative-stat__number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffc721;
+    margin-bottom: 0.5rem;
+}
+
+.initiative-stat__label {
+    color: #d1d5db;
+    font-weight: 500;
+}
+
+/* Our Principles */
+.our-principles {
+    padding: 5rem 1rem;
+    background: white;
+}
+
+.our-principles__container {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.our-principles__header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.our-principles__title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1rem;
+}
+
+.our-principles__subtitle {
+    font-size: 1.25rem;
+    color: #374151;
+}
+
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.principle-item {
+    background: #f9fafb;
+    border-radius: 1rem;
+    padding: 2rem;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.principle-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    border-color: #ffc721;
+}
+
+.principle-item__icon {
+    background: #ffc721;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    display: inline-flex;
+    margin-bottom: 1.5rem;
+}
+
+.principle-item__icon svg {
+    width: 2rem;
+    height: 2rem;
+    color: white;
+}
+
+.principle-item__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1rem;
+}
+
+.principle-item__description {
+    color: #374151;
+    line-height: 1.6;
+}
+
+.principles-conclusion {
+    text-align: center;
+    padding: 3rem;
+    background: linear-gradient(135deg, #ffc721, #ffb700);
+    border-radius: 1rem;
+    color: #111827;
+}
+
+.principles-conclusion__text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* About CTA */
+.about-cta {
+    padding: 5rem 1rem;
+    background: linear-gradient(to bottom right, #f9fafb, white);
+}
+
+.about-cta__container {
+    max-width: 64rem;
+    margin: 0 auto;
+}
+
+.about-cta__content {
+    text-align: center;
+}
+
+.about-cta__title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1.5rem;
+}
+
+.about-cta__description {
+    font-size: 1.25rem;
+    color: #374151;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-cta__actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .about-intro__content {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .mission-vision__content {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .how-we-work__content {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .social-initiative__content {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .about-stats,
+    .initiative-stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .about-cta__actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about-cta__actions .button {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .process-feature {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-stats,
+    .initiative-stats {
+        grid-template-columns: 1fr;
+    }
 }
