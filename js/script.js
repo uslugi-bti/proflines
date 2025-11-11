@@ -132,44 +132,45 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function initTeamSwiper() {
-        const teamSwiper = new Swiper('.team-swiper', {
-            slidesPerView: 1,
-            spaceBetween: 25,
-            loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-                dynamicBullets: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
+        if (document.querySelector(".team-swiper")) {
+            const teamSwiper = new Swiper('.team-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 25,
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
                 },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 25,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    dynamicBullets: true,
                 },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
                 },
-            },
-        });
+                breakpoints: {
+                    640: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 25,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                },
+            });
+        }
     }
 
     if (document.querySelector(".home-page")) {
         //initTestimonialsSwiper();
         initPortfolioSwiper();
-        initTeamSwiper();
     }
 
     initFAQAccordion();
@@ -238,6 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     animateProgressBars();
     initScrollAnimations();
+    initTeamSwiper();
 
     if (document.querySelector(".principles-swiper")) {
         const swiper = new Swiper('.principles-swiper', {
