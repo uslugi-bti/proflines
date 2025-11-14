@@ -286,4 +286,105 @@ document.addEventListener("DOMContentLoaded", () => {
             speed: 600,
         });
     }
+
+    if (document.querySelector(".blog-swiper")) {
+        const blogSwiper = new Swiper('.blog-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                1280: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                }
+            }
+        });
+    }
+
+    if (document.querySelector(".testimonials-swiper")) {
+        const testimonialsSwiper = new Swiper('.testimonials-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 25,
+                },
+                1024: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                },
+                1280: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                }
+            }
+        });
+
+        const toggleButtons = document.querySelectorAll('.testimonial-card__toggle');
+        
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const card = this.closest('.testimonial-card');
+                const content = card.querySelector('.testimonial-card__content');
+                const toggleText = this.querySelector('.testimonial-card__toggle-text');
+                const toggleIcon = this.querySelector('.testimonial-card__toggle-icon');
+                
+                if (content.classList.contains('testimonial-card__content--collapsed')) {
+                    // Раскрываем
+                    content.classList.remove('testimonial-card__content--collapsed');
+                    toggleText.textContent = 'Zobraziť menej';
+                    this.classList.add('testimonial-card__toggle--active');
+                } else {
+                    // Скрываем
+                    content.classList.add('testimonial-card__content--collapsed');
+                    toggleText.textContent = 'Čítať viac';
+                    this.classList.remove('testimonial-card__toggle--active');
+                }
+            });
+        });
+        
+        // Инициализация - все отзывы сначала свернуты
+        const allContents = document.querySelectorAll('.testimonial-card__content');
+        allContents.forEach(content => {
+            content.classList.add('testimonial-card__content--collapsed');
+        });
+    }
 });
