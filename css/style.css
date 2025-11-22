@@ -742,10 +742,17 @@ body {
 
 /* Service Card */
 .service-card {
-    padding: 2rem 0 0 0;
+    background: rgba(255,255,255,0.1); /* полупрозрачный фон ОБЯЗАТЕЛЬНО */
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.service-card a {
+    padding: 2rem;
+    text-decoration: none;
 }
 
 .service-card__icon {
@@ -1503,6 +1510,84 @@ body {
     background: #ffc721;
     opacity: 1;
     transform: scale(1.3);
+}
+
+/* Trustpilot Logo Styles */
+.testimonial-card__date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+.trustpilot-logo {
+    display: inline-block;
+    transition: all 0.3s ease;
+    opacity: 0.9;
+    max-width: 100px;
+}
+
+.trustpilot-logo:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.trustpilot-logo img {
+    display: block;
+    width: 100%;
+}
+
+.testimonial-card__date span {
+    color: #6b7280;
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Адаптивность для Trustpilot лого */
+@media (max-width: 639px) {
+    .testimonial-card__date {
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+    
+    .trustpilot-logo svg {
+        width: 60px;
+        height: 15px;
+    }
+    
+    .testimonial-card__date span {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+    .trustpilot-logo svg {
+        width: 70px;
+        height: 17px;
+    }
+}
+
+/* Альтернативный вариант с текстовым логотипом */
+.trustpilot-text-logo {
+    color: #00B67A;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.trustpilot-text-logo:hover {
+    color: #008C5E;
+    text-decoration: underline;
+}
+
+.trustpilot-text-logo::before {
+    content: "★";
+    color: #00B67A;
+    font-size: 1rem;
 }
 
 /* Адаптивность */
@@ -3422,7 +3507,7 @@ body {
     }
 
     .services {
-        background: url('../img/services/07.jpg') center / cover no-repeat;
+        background: url('../img/services/07.png') center / cover no-repeat;
         background-attachment: fixed;
     }
 
@@ -3806,15 +3891,16 @@ textarea:focus-visible {
     order: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+    width: 100%;
+    overflow-x: auto;
 }
 
 .visual-card {
     background: white;
     border-radius: 1rem;
-    padding: 2rem;
+    padding: 1rem;
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
     border: 1px solid #e5e7eb;
     text-align: center;
@@ -4020,6 +4106,7 @@ textarea:focus-visible {
     
     .problem-visual {
         order: 2;
+        justify-content: center;
     }
     
     .pain-content {
@@ -4040,7 +4127,7 @@ textarea:focus-visible {
     }
     
     .visual-card {
-        min-width: 280px;
+        padding: 2rem;
     }
 }
 
@@ -4089,15 +4176,6 @@ textarea:focus-visible {
         text-align: center;
         align-items: center;
     }
-    
-    .visual-arrow {
-        transform: rotate(90deg);
-        margin: 1rem 0;
-    }
-    
-    .problem-visual {
-        flex-direction: column;
-    }
 }
 
 @media (max-width: 480px) {
@@ -4110,7 +4188,6 @@ textarea:focus-visible {
     }
     
     .visual-card {
-        min-width: auto;
         width: 100%;
     }
     
@@ -4164,6 +4241,10 @@ textarea:focus-visible {
     color: #374151;
     line-height: 1.7;
     margin-bottom: 1.5rem;
+}
+
+.expectations-text ul {
+    padding: 0px 0px 0px 20px;
 }
 
 .expectations-visual {
@@ -4323,10 +4404,22 @@ textarea:focus-visible {
 
 /* Секция 4: Как это работает */
 .how-it-works-section {
-    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    background: url('../img/ako/07.png') center / cover no-repeat;
     border-radius: 1rem;
     padding: 4rem 2rem;
     color: white;
+    position: relative;
+    background-attachment: fixed;
+}
+
+.how-it-works-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, #111827c5, #1f2937ae);
 }
 
 .how-it-works-header {
@@ -4364,10 +4457,6 @@ textarea:focus-visible {
     background: rgba(255, 255, 255, 0.1);
     border-color: #ffc721;
     transform: translateX(5px);
-}
-
-.works-step-number {
-    display: none;
 }
 
 .works-step-content {
@@ -6404,6 +6493,94 @@ textarea:focus-visible {
     text-align: center;
 }
 
+/* Swiper стили для pricing секции */
+.pricing-swiper-container {
+    position: relative;
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+}
+
+.pricing-swiper {
+    padding: 1rem 0 3rem 0;
+}
+
+.pricing-swiper .swiper-slide {
+    height: auto;
+    display: flex;
+}
+
+.pricing-swiper .pricing-plan {
+    width: 100%;
+    margin: 0;
+}
+
+/* Навигация */
+.pricing-swiper .swiper-button-next,
+.pricing-swiper .swiper-button-prev {
+    width: 48px;
+    height: 48px;
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.pricing-swiper .swiper-button-next:after,
+.pricing-swiper .swiper-button-prev:after {
+    font-size: 1rem;
+    color: #374151;
+    font-weight: bold;
+}
+
+.pricing-swiper .swiper-button-next:hover,
+.pricing-swiper .swiper-button-prev:hover {
+    background: #ffc721;
+    border-color: #ffc721;
+}
+
+/* Пагинация */
+.pricing-swiper .swiper-pagination {
+    bottom: 0;
+}
+
+.pricing-swiper .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: #d1d5db;
+    opacity: 1;
+}
+
+.pricing-swiper .swiper-pagination-bullet-active {
+    background: #ffc721;
+}
+
+/* Адаптивность */
+@media (min-width: 1024px) {
+    .pricing-swiper-container {
+        padding: 0 2rem;
+    }
+    
+    .pricing-swiper .swiper-slide {
+        width: calc(33.333% - 2rem) !important;
+        margin-right: 2rem;
+    }
+}
+
+@media (max-width: 1023px) {
+}
+
+@media (max-width: 768px) {
+    .pricing-swiper-container {
+        padding: 0 0.5rem;
+    }
+    
+    .pricing-swiper .swiper-button-next,
+    .pricing-swiper .swiper-button-prev {
+        display: none;
+    }
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
     .pricing-features {
@@ -7213,6 +7390,20 @@ textarea:focus-visible {
     flex-wrap: wrap;
 }
 
+.works-step-number {
+    display: none;
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #ffc721, #ffb700);
+        color: #111827;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+    }
+
 @media (max-width: 767px) {
     .how-we-work__content {
         gap: 2rem;
@@ -7287,5 +7478,118 @@ textarea:focus-visible {
     .about-stats,
     .initiative-stats {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Стили для текста в зависимости от устройства */
+.desktop-text {
+    display: block;
+}
+
+.mobile-text {
+    display: none;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    .desktop-text {
+        display: none;
+    }
+    
+    .mobile-text {
+        display: block;
+    }
+    
+    /* Дополнительные стили для мобильной версии */
+    .how-it-works-step {
+        padding: 1rem 0;
+    }
+    
+    .works-step-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .works-step-arrow {
+        transform: rotate(90deg);
+        margin: 0.5rem 0;
+    }
+    
+    .works-step-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .works-step-description {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+}
+
+/* Десктопная версия */
+@media (min-width: 769px) {
+    .works-step-number {
+        display: flex;
+    }
+
+    .how-it-works-steps {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .how-it-works-step {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    
+    .works-step-content {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex: 1;
+    }
+    
+    .works-step-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+    
+    .works-step-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .works-step-text {
+        flex: 1;
+    }
+    
+    .works-step-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #ffffff;
+        margin-bottom: 0.5rem;
+    }
+    
+    .works-step-description {
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.5;
+    }
+    
+    .works-step-arrow {
+        font-size: 1.2rem;
+        color: #ffc721;
+        flex-shrink: 0;
+    }
+    
+    /* Убираем стрелку у последнего шага */
+    .how-it-works-step:last-child .works-step-arrow {
+        display: none;
     }
 }

@@ -387,4 +387,41 @@ document.addEventListener("DOMContentLoaded", () => {
             content.classList.add('testimonial-card__content--collapsed');
         });
     }
+
+    if (document.querySelector(".pricing-swiper")) {
+        const pricingSwiper = new Swiper('.pricing-swiper', {
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+            centeredSlides: false,
+            loop: false,
+            speed: 500,
+            
+            // Навигация
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            
+            // Пагинация
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            
+            // Адаптивность
+            breakpoints: {
+                // На десктопе показываем 3 карточки
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 32,
+                    centeredSlides: false,
+                },
+                // На планшетах показываем 2 карточки
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 24,
+                }
+            }
+        });
+    }
 });
